@@ -1,22 +1,25 @@
+
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import firebase from './firebase';
-
 function App() {
+    console.log("p")
+
     React.useEffect(()=>{
         const msg=firebase.messaging();
         msg.requestPermission().then(()=>{
             return msg.getToken();
         }).then((data)=>{
-            console.warn("token",data)
+            console.log("token",data)
         })
     })
-  return (
-    <div>
-      <h1>Hi</h1>
-    </div>
-  );
+    return (
+        <div className="">
+
+            <h1>React</h1>
+
+        </div>
+    );
 }
 
 export default App;
